@@ -1,0 +1,48 @@
+# ==========================================
+# NEELCOCO Full-Stack Git Ignore Configuration
+# ==========================================
+
+# --- .NET & Visual Studio ---
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.userosscache
+*.sln.docstates
+
+# --- Databases ---
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.mdf
+*.ldf
+
+# --- Node & Frontend ---
+**/node_modules/
+**/dist/
+**/dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+
+# --- Environment & Sensitive Files ---
+.env
+.env*.local
+!.env.example
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Operating System & Editor Files ---
+.DS_Store
+Thumbs.db
+[Dd]esktop.ini
+.idea/
