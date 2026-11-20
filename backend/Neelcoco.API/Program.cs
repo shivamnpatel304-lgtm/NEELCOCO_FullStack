@@ -2,6 +2,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Identity;
@@ -56,7 +57,10 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddDbContext<NeelcocoDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("Sqlite") ?? "Data Source=neelcoco.db"));
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("Sqlite") ?? "Data Source=neelcoco.db");
+    options.ConfigureWarnings(w => w.Ignore(RelationalEventId.PendingModelChangesWarning));
+});
 
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddSingleton<AgentOrchestrator>();

@@ -1,21 +1,43 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import ProductCard from "../components/ProductCard";
+import { FALLBACK_PRODUCTS, FALLBACK_CATEGORIES } from "../data/fallbackProducts";
 
 export default function Products() {
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState(FALLBACK_PRODUCTS);
+  const [categories, setCategories] = useState(FALLBACK_CATEGORIES);
   const [search, setSearch] = useState("");
   const [categoryId, setCategoryId] = useState("");
 
   const load = () => {
     api.get("/products", { params: { search, categoryId: categoryId || undefined } })
-      .then(r => setProducts(r.data)).catch(console.error);
+      .then(r => {
+        if (r.data && Array.isArray(r.data)) {
+          setProducts(r.data);
+        }
+      })
+      .catch(() => {
+        let filtered = FALLBACK_PRODUCTS;
+        if (search) {
+          filtered = filtered.filter(p => p.name.toLowerCase().includes(search.toLowerCase()));
+        }
+        if (categoryId) {
+          filtered = filtered.filter(p => p.categoryId === Number(categoryId));
+        }
+        setProducts(filtered);
+      });
   };
 
   useEffect(() => {
-    api.get("/products/categories").then(r => setCategories(r.data));
+    api.get("/products/categories")
+      .then(r => {
+        if (r.data && Array.isArray(r.data) && r.data.length > 0) {
+          setCategories(r.data);
+        }
+      })
+      .catch(() => {});
   }, []);
+
   useEffect(() => { load(); }, [search, categoryId]);
 
   return (

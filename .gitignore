@@ -55,6 +55,10 @@ secrets.json
 *.log
 logs/
 
+# --- Backups & Temporary ---
+_backup_modified_state/
+*.bak
+
 # --- Operating System & Editor Files ---
 .DS_Store
 Thumbs.db

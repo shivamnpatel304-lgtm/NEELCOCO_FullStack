@@ -1,8 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import { useCart } from "../context";
 
 export default function Navbar() {
-  const { count } = useCart();
   const active = ({ isActive }) => isActive ? "text-white" : "text-gray-300 hover:text-white";
 
   return (
@@ -15,16 +13,12 @@ export default function Navbar() {
             <div className="text-[10px] tracking-[.22em] text-gray-400">THE REAL TASTE OF MILK</div>
           </div>
         </Link>
-        <nav className="flex items-center gap-5 text-sm">
+        <nav className="flex items-center gap-6 text-sm">
           <NavLink className={active} to="/">Home</NavLink>
           <NavLink className={active} to="/products">Products</NavLink>
           <NavLink className={active} to="/about">About</NavLink>
           <NavLink className={active} to="/contact">Contact</NavLink>
           <NavLink className={active} to="/agents">AI Agents</NavLink>
-          <Link to="/cart" className="relative bg-white text-black rounded-full px-4 py-2 font-semibold">
-            Cart
-            {count > 0 && <span className="ml-2 bg-black text-white rounded-full px-2 text-xs">{count}</span>}
-          </Link>
         </nav>
       </div>
     </header>

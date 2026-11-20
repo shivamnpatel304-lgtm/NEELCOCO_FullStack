@@ -2,12 +2,19 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../services/api";
 import ProductCard from "../components/ProductCard";
+import { FALLBACK_PRODUCTS } from "../data/fallbackProducts";
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(FALLBACK_PRODUCTS);
 
   useEffect(() => {
-    api.get("/products").then(r => setProducts(r.data)).catch(console.error);
+    api.get("/products")
+      .then(r => {
+        if (r.data && Array.isArray(r.data) && r.data.length > 0) {
+          setProducts(r.data);
+        }
+      })
+      .catch(() => {});
   }, []);
 
   return (
