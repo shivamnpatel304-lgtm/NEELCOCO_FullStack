@@ -66,26 +66,8 @@ namespace Neelcoco.API.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Kulfi",
-                            Slug = "kulfi"
-                        },
-                        new
-                        {
-                            Id = 2,
                             Name = "Ice Pops",
                             Slug = "ice-pops"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Dairy Desserts",
-                            Slug = "dairy-desserts"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Mukhwas",
-                            Slug = "mukhwas"
                         });
                 });
 
@@ -250,61 +232,106 @@ namespace Neelcoco.API.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            Description = "Creamy traditional milk kulfi.",
-                            ImageUrl = "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80",
+                            Description = "Refreshing and tangy blueberry ice gola pop bursting with chilled berry coolness.",
+                            ImageUrl = "/blueberry.jpeg",
                             IsActive = true,
                             IsFeatured = true,
-                            MRP = 50m,
-                            Name = "Malai Kulfi",
-                            Price = 40m,
-                            Slug = "malai-kulfi",
+                            MRP = 25m,
+                            Name = "Blueberry Ice Pop",
+                            Price = 20m,
+                            Slug = "blueberry-ice-pop",
                             StockQuantity = 500,
                             Unit = "1 pc"
                         },
                         new
                         {
                             Id = 2,
-                            CategoryId = 3,
-                            Description = "Rich chocolate dairy dessert.",
-                            ImageUrl = "https://images.unsplash.com/photo-1575377427642-087cf684f29d?auto=format&fit=crop&w=900&q=80",
+                            CategoryId = 1,
+                            Description = "Signature rich cold cocoa milk indulgence frozen into a delicious milky pop.",
+                            ImageUrl = "/coldcoco.jpeg",
                             IsActive = true,
                             IsFeatured = true,
-                            MRP = 40m,
-                            Name = "Chocolate Splash",
-                            Price = 35m,
-                            Slug = "chocolate-splash",
-                            StockQuantity = 400,
-                            Unit = "200 ml"
+                            MRP = 30m,
+                            Name = "Cold Coco Milky Pop",
+                            Price = 25m,
+                            Slug = "cold-coco-milky-pop",
+                            StockQuantity = 500,
+                            Unit = "1 pc"
                         },
                         new
                         {
                             Id = 3,
-                            CategoryId = 2,
-                            Description = "Fun creamy frozen treat.",
-                            ImageUrl = "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=80",
+                            CategoryId = 1,
+                            Description = "Tangy and refreshing kachi keri raw mango ice gola pop with a zesty burst.",
+                            ImageUrl = "/green.jpeg",
                             IsActive = true,
                             IsFeatured = true,
-                            MRP = 20m,
-                            Name = "Milky Pop",
-                            Price = 15m,
-                            Slug = "milky-pop",
-                            StockQuantity = 1000,
+                            MRP = 25m,
+                            Name = "Raw Mango Ice Pop",
+                            Price = 20m,
+                            Slug = "raw-mango-ice-pop",
+                            StockQuantity = 500,
                             Unit = "1 pc"
                         },
                         new
                         {
                             Id = 4,
-                            CategoryId = 4,
-                            Description = "Aromatic mouth freshener inspired by Indian ingredients.",
-                            ImageUrl = "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+                            CategoryId = 1,
+                            Description = "Classic sweet and tangy spiced jamun-flavour Kala Khatta ice gola pop.",
+                            ImageUrl = "/kotha.jpeg",
                             IsActive = true,
-                            IsFeatured = false,
-                            MRP = 100m,
-                            Name = "Jamun Seed Mukhwas",
-                            Price = 80m,
-                            Slug = "jamun-seed-mukhwas",
-                            StockQuantity = 300,
-                            Unit = "100 g"
+                            IsFeatured = true,
+                            MRP = 25m,
+                            Name = "Kala Khatta Ice Pop",
+                            Price = 20m,
+                            Slug = "kala-khatta-ice-pop",
+                            StockQuantity = 500,
+                            Unit = "1 pc"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 1,
+                            Description = "Luscious alphonso mango combined with rich creamy milk in an ice pop.",
+                            ImageUrl = "/mango.jpeg",
+                            IsActive = true,
+                            IsFeatured = true,
+                            MRP = 30m,
+                            Name = "Mango Milky Pop",
+                            Price = 25m,
+                            Slug = "mango-milky-pop",
+                            StockQuantity = 500,
+                            Unit = "1 pc"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryId = 1,
+                            Description = "Vibrant citrus burst of chilled orange ice gola pop for total refreshment.",
+                            ImageUrl = "/orange.jpeg",
+                            IsActive = true,
+                            IsFeatured = true,
+                            MRP = 25m,
+                            Name = "Orange Ice Pop",
+                            Price = 20m,
+                            Slug = "orange-ice-pop",
+                            StockQuantity = 500,
+                            Unit = "1 pc"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CategoryId = 1,
+                            Description = "Royal saffron-infused rich milk ice pop with traditional rich Indian flavours.",
+                            ImageUrl = "/rajbhog.jpeg",
+                            IsActive = true,
+                            IsFeatured = true,
+                            MRP = 30m,
+                            Name = "Rajbhog Milky Pop",
+                            Price = 25m,
+                            Slug = "rajbhog-milky-pop",
+                            StockQuantity = 500,
+                            Unit = "1 pc"
                         });
                 });
 
