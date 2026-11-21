@@ -64,6 +64,7 @@ builder.Services.AddDbContext<NeelcocoDbContext>(options =>
 
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddSingleton<AgentOrchestrator>();
+builder.Services.AddHostedService<AgentBackgroundWorker>();
 
 var jwtKey = builder.Configuration["Jwt:Key"]!;
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
